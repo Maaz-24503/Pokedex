@@ -12,7 +12,6 @@ class PokeProvider extends ChangeNotifier {
     notifyListeners();
     final response = await _service.getAllPokemons();
     _pokemons = response;
-    print("asjhkbdaskjbdaksjbdkasjbda");
     isLoading = false;
     notifyListeners();
   }

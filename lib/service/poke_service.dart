@@ -8,13 +8,14 @@ class PokeService {
     final dio = Dio();
     final response =
         await dio.get('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json');
-    print(response.data);
+    // print(response.data);
     if (response.statusCode == 200) {
       final json = jsonDecode(response.data) as Map<String, dynamic>;
       final List<Pokemon> users = json['pokemon'].map<Pokemon>((e) {
-        return Pokemon.fromJSON(json);
+        // print( e);
+        return Pokemon.fromJSON(e);
       }).toList();
-      print(users);
+      // print(users);
       return users;
     } else {
       throw Exception();
